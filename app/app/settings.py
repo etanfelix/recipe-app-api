@@ -120,4 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Because you choose to override the default user model with
+# core.User
 AUTH_USER_MODEL = 'core.User'

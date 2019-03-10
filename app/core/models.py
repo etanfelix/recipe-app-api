@@ -3,6 +3,15 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
                                        PermissionsMixin
 
 
+# You can extend the default User model, or substitute a completely 
+# customised model. Extend means creating another model with 1:1 FK
+# to the actual User model. See settings.AUTH_USER_MODEL for the 
+# substitute (override) model. You may choose to override the default
+# User model for instances where it makes more sense to use an email
+# address as identification token instead of a username. Its recommended
+# to set up a custom user model when starting a project so you'll be able
+# to customise it in the future if the need arises.
+
 class UserManager(BaseUserManager):
 
     def create_user(self, email, password=None, **extra_fields):

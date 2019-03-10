@@ -8,6 +8,10 @@ class ModelTests(TestCase):
         """ Test creating a new user with an email is successful """
         email = 'test@example.com'
         password = 'Testpass123'
+        # Use get_user_model() to refer to User instead of referring
+        # to User directly. Otherwise your code will not work in 
+        # projects where the AUTH_USER_MODEL setting has been changed
+        # to a different user model
         user = get_user_model().objects.create_user(
             email=email,
             password=password
